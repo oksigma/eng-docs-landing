@@ -1,5 +1,5 @@
 import className from 'classnames';
-import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 type DelimiterType = 'dot' | 'number' | 'dash' | 'none';
 
@@ -10,6 +10,7 @@ type IVerticalFeatureRowListProps = {
   imageAlt: string;
   reverse?: boolean;
   delimiter?: DelimiterType;
+  className?: string;
 };
 
 const VerticalFeatureRowList = (props: IVerticalFeatureRowListProps) => {
@@ -20,6 +21,7 @@ const VerticalFeatureRowList = (props: IVerticalFeatureRowListProps) => {
     imageAlt,
     reverse = false,
     delimiter = 'dot',
+    className: customClassName,
   } = props;
 
   const verticalFeatureClass = className(
@@ -31,8 +33,6 @@ const VerticalFeatureRowList = (props: IVerticalFeatureRowListProps) => {
       'flex-row-reverse': reverse,
     },
   );
-
-  const router = useRouter();
 
   const renderDelimiter = (index: number) => {
     switch (delimiter) {
@@ -54,23 +54,39 @@ const VerticalFeatureRowList = (props: IVerticalFeatureRowListProps) => {
   };
 
   return (
-    <div className={verticalFeatureClass}>
-      <div className="w-full sm:w-1/2 sm:px-6">
-        <h3 className="text-center text-3xl font-semibold text-gray-900">
-          {title}
-        </h3>
-        <div className="mt-6 text-left text-xl leading-9">
-          {descriptions.map((description, index) => (
-            <div key={index} className="mb-4 flex items-start">
-              {renderDelimiter(index)}
-              <span className="flex-1">{description}</span>
-            </div>
-          ))}
+    <div
+      className={className('w-screen', customClassName)}
+      style={{ marginLeft: '50%', transform: 'translateX(-50%)' }}
+    >
+      <div
+        className={className(
+          'mx-auto max-w-screen-lg px-3',
+          verticalFeatureClass,
+        )}
+      >
+        <div className="w-full sm:w-1/2 sm:px-6">
+          <h3 className="pt-10 text-center text-3xl font-semibold text-gray-900">
+            {title}
+          </h3>
+          <div className="mt-6 text-left text-xl leading-9">
+            {descriptions.map((description, index) => (
+              <div key={index} className="mb-4 flex items-start">
+                {renderDelimiter(index)}
+                <span className="flex-1">{description}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className="w-full p-6 sm:w-1/2">
-        <img src={`${router.basePath}${image}`} alt={imageAlt} />
+        <div className="w-full p-6 sm:w-1/2">
+          <Image
+            src={image}
+            alt={imageAlt}
+            width={600}
+            height={400}
+            className="mx-auto max-w-xs rounded-2xl sm:max-w-none"
+          />
+        </div>
       </div>
     </div>
   );

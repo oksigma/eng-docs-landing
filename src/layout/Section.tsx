@@ -9,7 +9,7 @@ type ISectionProps = {
 
 const Section = (props: ISectionProps) => (
   <div
-    className={`mx-auto max-w-screen-lg px-3 ${
+    className={`mx-auto max-w-screen-lg ${
       props.yPadding ? props.yPadding : 'py-16'
     }`}
   >
@@ -24,7 +24,7 @@ const Section = (props: ISectionProps) => (
       </div>
     )}
 
-    {props.children}
+    <div className="text-center">{props.children}</div>
   </div>
 );
 
