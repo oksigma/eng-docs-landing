@@ -5,9 +5,10 @@ const VerticalFeatures = () => (
   <Section>
     <VerticalFeatureRowList
       className="bg-gray-400 text-black"
-      title="Find Documents"
+      title="Document Relationships"
       descriptions={[
-        'Quickly and easily find the drawings that you need.',
+        'Quickly and easily find the documents that you need.',
+        'Withiin a document or drawing, find the other documents that its related to or depends on.',
         'Do you need to find that similar drawings from a different project?  Eng Docs makes that easy.',
       ]}
       image="/assets/images/feature.svg"

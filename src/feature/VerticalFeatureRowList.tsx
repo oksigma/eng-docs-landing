@@ -37,19 +37,17 @@ const VerticalFeatureRowList = (props: IVerticalFeatureRowListProps) => {
   const renderDelimiter = (index: number) => {
     switch (delimiter) {
       case 'dot':
-        return <span className="mr-3 text-primary-500">•</span>;
+        return <span className="mr-3 text-black">•</span>;
       case 'number':
         return (
-          <span className="mr-3 font-semibold text-primary-500">
-            {index + 1}.
-          </span>
+          <span className="mr-3 font-semibold text-black">{index + 1}.</span>
         );
       case 'dash':
-        return <span className="mr-3 text-primary-500">—</span>;
+        return <span className="mr-3 text-black">—</span>;
       case 'none':
         return null;
       default:
-        return <span className="mr-3 text-primary-500">•</span>;
+        return <span className="mr-3 text-black">•</span>;
     }
   };
 
