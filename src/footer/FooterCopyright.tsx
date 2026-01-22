@@ -3,7 +3,7 @@ import { AppConfig } from '../utils/AppConfig';
 const FooterCopyright = () => (
   <div className="footer-copyright">
     © Copyright {new Date().getFullYear()} {AppConfig.title}. Made by{' '}
-    <a href="https://omagetek.com.au">OmegaTek</a>.
+    <a href="https://omegatek.com.au">OmegaTek</a>.
     {/*
      * PLEASE READ THIS SECTION
      * I'm an indie maker with limited resources and funds, I'll really appreciate if you could have a link to my website.

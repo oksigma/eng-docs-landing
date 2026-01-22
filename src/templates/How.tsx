@@ -34,15 +34,13 @@ const How = () => (
       <DescriptionList
         items={[
           "Engineering offices can have 100's of projects and 1000's of documents",
-          'Often these documents can be very similar with only tweaks or simple differences between them',
-          'However knowing which document is the correct one for a particular project can be difficult and time consuming',
-          'Especially for new people',
+          'Engineering document relationships within an engineering office have a lot of inherit complexity',
+          'Document relationships are constantly changing and evolving',
+          'However knowing which document is the correct one for a particular project, for a specific problem, can be difficult and time consuming',
+          'People new to the project or business can find this over whelming and difficult to navigate',
           'Each employee ends up establishing their own document management system',
-          'Engineering documents within an engineering project have a lot of inherit complexity',
-          'For example: a project may consiten of 100 document',
-          'These documents consist of drawings, specification, standards',
+          'Different types of documents consisting of drawings, specifications, standards and more',
           'Each one of these documents has different versions',
-          'The version history and interdepencies of these document are not always in sync',
           'This makes finding relevant specific information difficult and time consuming and error prone',
         ]}
       />
