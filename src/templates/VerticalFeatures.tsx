@@ -1,32 +1,8 @@
-import Image from 'next/image';
-
 import { VerticalFeatureRowList } from '../feature/VerticalFeatureRowList';
 import { Section } from '../layout/Section';
 
 const VerticalFeatures = () => (
   <Section>
-    <h2
-      className="framer-text framer-styles-preset-1nqpcik mb-10 text-center text-2xl font-bold text-black sm:text-4xl"
-      data-styles-preset="vlUd825be"
-      style={{
-        color: 'rgb(9, 9, 11)',
-      }}
-    >
-      Manage all your documents in one place.
-    </h2>
-    <div className="flex justify-center">
-      <Image
-        src="/assets/images/DocumentCube.png"
-        alt="Hero"
-        width={400}
-        height={400}
-        className="size-48 rounded-2xl sm:size-56 md:size-72 lg:size-96"
-        style={{
-          boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
-          border: '1px solid #e0e0e0',
-        }}
-      />
-    </div>
     <VerticalFeatureRowList
       className="bg-gray-400 text-black"
       title="Find Documents"
