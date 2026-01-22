@@ -29,6 +29,18 @@ const VerticalFeatures = () => (
     />
     <VerticalFeatureRowList
       className="bg-gray-400 text-black"
+      title="Drawings"
+      descriptions={[
+        'Quickly and easily find the drawings that you need.',
+        'Eng Docs helps you identify which projects have similar drawings',
+        'Eng Docs knows specific data about each drawings, enabling you to link specfications and standards to a particular drawings.',
+        'Eng Docs helps you link which specifications used a particular drawing and vice versa.',
+      ]}
+      image="/assets/images/steel-structure.png"
+      imageAlt="First feature alt text"
+    />
+    <VerticalFeatureRowList
+      className="text-black"
       title="Search by Standard or Specification"
       descriptions={[
         'AS 4100 steel structures',
