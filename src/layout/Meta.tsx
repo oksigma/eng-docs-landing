@@ -8,10 +8,16 @@ type IMetaProps = {
   title: string;
   description: string;
   canonical?: string;
+  image?: string;
 };
 
 const Meta = (props: IMetaProps) => {
   const router = useRouter();
+  const baseUrl = AppConfig.url;
+  const canonicalUrl = props.canonical || `${baseUrl}${router.asPath}`;
+  const ogImage =
+    props.image ||
+    `${baseUrl}${router.basePath}/assets/images/DocumentCube.png`;
 
   return (
     <>
@@ -50,13 +56,26 @@ const Meta = (props: IMetaProps) => {
       <NextSeo
         title={props.title}
         description={props.description}
-        canonical={props.canonical}
+        canonical={canonicalUrl}
         openGraph={{
           title: props.title,
           description: props.description,
-          url: props.canonical,
+          url: canonicalUrl,
           locale: AppConfig.locale,
           site_name: AppConfig.site_name,
+          images: [
+            {
+              url: ogImage,
+              width: 1200,
+              height: 630,
+              alt: props.title,
+            },
+          ],
+        }}
+        twitter={{
+          handle: '@engdocs',
+          site: '@engdocs',
+          cardType: 'summary_large_image',
         }}
       />
     </>

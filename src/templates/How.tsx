@@ -53,6 +53,7 @@ const How = () => (
       items={[
         'Eng Docs has its own AI engine that can help you find the relevant information quickly and easily',
         'Purpose built UI and UX with the engineer, site office or support team in mind',
+        'Built by engineers who have worked in an engineering office, with site experience',
       ]}
     />
   </Section>

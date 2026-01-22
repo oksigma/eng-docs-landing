@@ -67,12 +67,22 @@ const VerticalFeatureRowList = (props: IVerticalFeatureRowListProps) => {
             {title}
           </h3>
           <div className="mt-6 text-left text-xl leading-9">
-            {descriptions.map((description, index) => (
-              <div key={index} className="mb-4 flex items-start">
-                {renderDelimiter(index)}
-                <span className="flex-1">{description}</span>
-              </div>
-            ))}
+            {descriptions.map((description, index) => {
+              const trimmedDescription = description.trim();
+              const descriptionWithPeriod =
+                trimmedDescription.endsWith('.') ||
+                trimmedDescription.endsWith('!') ||
+                trimmedDescription.endsWith('?')
+                  ? trimmedDescription
+                  : `${trimmedDescription}.`;
+
+              return (
+                <div key={index} className="mb-4 flex items-start">
+                  {renderDelimiter(index)}
+                  <span className="flex-1">{descriptionWithPeriod}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
 

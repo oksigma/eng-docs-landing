@@ -17,17 +17,16 @@ const VerticalFeatures = () => (
 
     <VerticalFeatureRowList
       className="text-black"
-      title="Drawings"
+      title="Field Support"
       descriptions={[
-        'Quickly and easily find the drawings that you need.',
-        'Eng Docs helps you identify which projects have similar drawings',
-        'Eng Docs knows specific data about each drawing, enabling you to link specfications and standards to each drawing.',
-        'Eng Docs helps you link which specifications used a particular drawing and vice versa.',
+        'Quickly and easily respond to field requests for information',
+        'Give responses in real time',
+        'No more waiting for a response from a document management system',
+        'No more searching through multiple documents to find the information you need',
       ]}
-      image="/assets/images/steel-structure.png"
+      image="/assets/images/site.jpeg"
       imageAlt="First feature alt text"
     />
-
     <VerticalFeatureRowList
       className="bg-gray-400 text-black"
       title="Search by Standard or Specification"
