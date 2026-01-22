@@ -1,23 +1,38 @@
 import { VerticalFeatureRow } from '../feature/VerticalFeatureRow';
+import { VerticalFeatureRowList } from '../feature/VerticalFeatureRowList';
 import { Section } from '../layout/Section';
 
 const VerticalFeatures = () => (
   <Section
     title="Your title here"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus malesuada nisi tellus, non imperdiet nisi tempor at."
+    description="Engineering Docs enables you to run an Engineering Office with ease."
   >
-    <VerticalFeatureRow
-      title="Your title here"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
+    <VerticalFeatureRowList
+      title="Find Documents"
+      descriptions={[
+        'Quickly and easily find the drawings that you need.',
+        'Do you need to find that similar drawings from a different project?  Eng Docs makes that easy.',
+      ]}
       image="/assets/images/feature.svg"
       imageAlt="First feature alt text"
     />
+
+    <VerticalFeatureRowList
+      title="Drawings"
+      descriptions={[
+        'Quickly and easily find the drawings that you need.',
+        'Do you need to find that similar drawings from a different project?  Eng Docs makes that easy.',
+      ]}
+      image="/assets/images/steel-structure.png"
+      imageAlt="First feature alt text"
+    />
+
     <VerticalFeatureRow
-      title="Your title here"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
+      title="Find Documents"
+      description="Search by equipment type - API 610 pumps.ASME B31.3 flange systemm
+"
       image="/assets/images/feature2.svg"
       imageAlt="Second feature alt text"
-      reverse
     />
     <VerticalFeatureRow
       title="Your title here"

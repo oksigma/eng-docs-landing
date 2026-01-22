@@ -18,6 +18,7 @@
     // Configuration for TypeScript files
     {
       "files": ["**/*.ts", "**/*.tsx"],
+      "parser": "@typescript-eslint/parser",
       "plugins": [
         "@typescript-eslint",
         "unused-imports",
@@ -31,7 +32,12 @@
         "plugin:prettier/recommended"
       ],
       "parserOptions": {
-        "project": "./tsconfig.json"
+        "project": "./tsconfig.json",
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "ecmaFeatures": {
+          "jsx": true
+        }
       },
       "rules": {
         "prettier/prettier": [
