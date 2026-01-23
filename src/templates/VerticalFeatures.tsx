@@ -2,7 +2,7 @@ import { VerticalFeatureRowList } from '../feature/VerticalFeatureRowList';
 import { Section } from '../layout/Section';
 
 const VerticalFeatures = () => (
-  <Section>
+  <Section yPadding="pt-2 pb-16">
     <VerticalFeatureRowList
       className="bg-gray-400 text-black"
       title="Document Relationships"
@@ -51,6 +51,19 @@ const VerticalFeatures = () => (
         'ISO 18001 occupational health and safety management systems',
       ]}
       image="/assets/images/pipework.jpg"
+      imageAlt="Second feature alt text"
+    />
+    <VerticalFeatureRowList
+      className="bg-gray-400 text-black"
+      title="Track Distribution of Documents"
+      descriptions={[
+        'Keep of track of who has accessed each document',
+        'Who has downloaded the document',
+        'Control access of each document to specific users and groups',
+        'Automate disctribtion of documents when they are updated or changed',
+        'Give access to people outside your organisation, eg vendors, contractors, clients as others',
+      ]}
+      image="/assets/images/document-distribution.png"
       imageAlt="Second feature alt text"
     />
   </Section>

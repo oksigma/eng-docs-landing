@@ -4,9 +4,9 @@ import { DescriptionList } from '../feature/DescriptionList';
 import { Section } from '../layout/Section';
 
 const How = () => (
-  <Section>
+  <Section yPadding="pt-16 pb-2">
     <h2
-      className="framer-text framer-styles-preset-1nqpcik mb-10 text-center text-2xl font-bold text-black sm:text-4xl"
+      className="framer-text framer-styles-preset-1nqpcik mx-2 mb-10 text-center text-2xl font-bold text-black sm:text-4xl"
       data-styles-preset="vlUd825be"
       style={{
         color: 'rgb(9, 9, 11)',
@@ -54,6 +54,7 @@ const How = () => (
         'Eng Docs has its own AI engine that can help you find the relevant information quickly and easily',
         'Purpose built UI and UX with the engineer, site office or support team in mind',
         'Built by engineers who have worked in an engineering office, with site experience',
+        'Connect to cloud based file systems so the system is always up to date',
       ]}
     />
   </Section>

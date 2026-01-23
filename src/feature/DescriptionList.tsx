@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type IDescriptionListProps = {
   items: string[];
@@ -16,6 +16,30 @@ const DescriptionList = (props: IDescriptionListProps) => {
   } = props;
 
   const [isOpen, setIsOpen] = useState(defaultOpen);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkDeviceType = () => {
+      // Check for touch capability
+      const hasTouchScreen =
+        'ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        // @ts-ignore
+        navigator.msMaxTouchPoints > 0;
+
+      // Check user agent for mobile devices
+      const userAgent =
+        navigator.userAgent || navigator.vendor || (window as any).opera;
+      const isMobileUserAgent =
+        /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+          userAgent.toLowerCase(),
+        );
+
+      setIsMobile(hasTouchScreen && isMobileUserAgent);
+    };
+
+    checkDeviceType();
+  }, []);
 
   return (
     <div>
@@ -29,14 +53,26 @@ const DescriptionList = (props: IDescriptionListProps) => {
       </button>
       {isOpen && (
         <div className="transition-all duration-300">
-          {items.map((item, index) => (
-            <p
-              key={index}
-              className={`mx-6 mb-6 rounded-lg bg-gray-200 px-10 py-2 text-left text-gray-800 ${customClassName || ''}`}
-            >
-              {item}
-            </p>
-          ))}
+          {items.map((item, index) => {
+            const trimmedItem = item.trim();
+            const itemWithPeriod =
+              trimmedItem.endsWith('.') ||
+              trimmedItem.endsWith('!') ||
+              trimmedItem.endsWith('?')
+                ? trimmedItem
+                : `${trimmedItem}.`;
+
+            return (
+              <p
+                key={index}
+                className={`mx-6 mb-6 rounded-lg px-10 py-2 text-left text-gray-800 ${
+                  isMobile ? 'bg-gray-200' : 'bg-gray-400'
+                } ${customClassName || ''}`}
+              >
+                {itemWithPeriod}
+              </p>
+            );
+          })}
         </div>
       )}
     </div>

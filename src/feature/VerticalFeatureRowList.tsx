@@ -24,6 +24,7 @@ const VerticalFeatureRowList = (props: IVerticalFeatureRowListProps) => {
     className: customClassName,
   } = props;
 
+  const hasBackground = customClassName?.includes('bg-');
   const verticalFeatureClass = className(
     'mt-20',
     'flex',
@@ -63,10 +64,14 @@ const VerticalFeatureRowList = (props: IVerticalFeatureRowListProps) => {
         )}
       >
         <div className="w-full sm:w-1/2 sm:px-6">
-          <h3 className="pt-10 text-center text-3xl font-semibold text-gray-900">
+          <h3
+            className={`text-center text-3xl font-semibold text-gray-900 ${
+              hasBackground ? 'pt-5' : 'pt-0'
+            }`}
+          >
             {title}
           </h3>
-          <div className="mt-6 text-left text-xl leading-9">
+          <div className="mt-10 text-left leading-normal sm:mt-10 sm:text-xl">
             {descriptions.map((description, index) => {
               const trimmedDescription = description.trim();
               const descriptionWithPeriod =
@@ -86,7 +91,7 @@ const VerticalFeatureRowList = (props: IVerticalFeatureRowListProps) => {
           </div>
         </div>
 
-        <div className="w-full p-6 sm:w-1/2">
+        <div className="w-full px-6 py-4 sm:w-1/2">
           <Image
             src={image}
             alt={imageAlt}
