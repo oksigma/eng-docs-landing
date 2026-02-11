@@ -60,7 +60,7 @@ const VerticalFeatures = () => (
         'Keep of track of who has accessed each document',
         'Who has downloaded the document',
         'Control access of each document to specific users and groups',
-        'Automate disctribtion of documents when they are updated or changed',
+        'Automate distribution of documents when they are updated or changed',
         'Give access to people outside your organisation, eg vendors, contractors, clients as others',
       ]}
       image="/assets/images/document-distribution.png"
