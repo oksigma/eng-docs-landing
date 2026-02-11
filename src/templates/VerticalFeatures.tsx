@@ -8,7 +8,7 @@ const VerticalFeatures = () => (
       title="Document Relationships"
       descriptions={[
         'Determine the relationships between documents and drawings.',
-        'Within a document or drawing, find the other documents that its related to or depends on.',
+        "Within a document or drawing, find the other documents that it's related to or depends on.",
         'Do you need to find that similar drawings from a different project?  Eng Docs makes that easy.',
       ]}
       image="/assets/images/feature.svg"
